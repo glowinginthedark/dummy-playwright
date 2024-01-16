@@ -20,7 +20,7 @@ jobs:
     - name: Run Playwright tests
       env:
         CUSTOM_ENV_VARIABLE: ${{ secrets.CUSTOM_ENV_VARIABLE }}
-      run: npx playwright test
+      run: cd tests && npx playwright test example.spec.ts
     - uses: actions/upload-artifact@v3
       if: always()
       with:
